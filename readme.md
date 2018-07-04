@@ -57,11 +57,25 @@ handleConfirmPassword = (rule, value, callback) => {
 
 ```
 
-#### 正则匹配 `开头不能为0或不超过 9999999` 的数字 
+**正则匹配** `开头不能为0或不超过 9999999` 的数字 
 
   `/^[1-9]\d{0,6}$/`
   
-#### 
+**获取表单提交数据** 
+
+```
+
+form.validateFieldsAndScroll((err, value)=> {
+    if(!err){
+        let option = Object.assign({}, value)
+    }
+    
+   ...
+})
+
+// 通过 Object.assign() 方法获取表单全部数据
+
+```
 
 
 
