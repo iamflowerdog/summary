@@ -77,10 +77,63 @@ form.validateFieldsAndScroll((err, value)=> {
 
 ```
 
+#### 前端编辑 Table 列表数据
 
 
+**修改列表数据**
+
+```
+
+handleEditItem(item){
+        const serviceSingleDTOS = [...this.state.serviceSingleDTOS];
+        // 先找到要修改list数组的索引
+        let target = serviceSingleDTOS.findIndex((element) => {
+            return element.id === item.id;
+        });
+
+        if(target || target === 0){
+            serviceSingleDTOS[target] = item;
+            this.setState({serviceSingleDTOS});
+        }
+
+    }
+
+```
 
 
+**为record添加key**
+
+>  Warning: Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
+
+```
+<Table
+  dataSource={this.state.serviceSingleDTOS}
+   rowKey={(record) => {
+       return record.id
+   }}
+ >
+
+```
+
+```
+.ant-checkbox-wrapper{
+      .ant-checkbox{
+        .ant-checkbox-inner{
+          display: none;
+        }
+        & + span{
+          background-color: #999999;
+          border-radius: 4px;
+        }
+      }
+      .ant-checkbox-checked + span{
+        background-color: #1890FF;
+        color: white;
+        border-radius: 4px;
+      }
+    }
+
+```
 
 
 
