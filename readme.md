@@ -15,14 +15,14 @@
 
 **问题描述**
 
+```
 由于要在提交前，需要对表单内的各个 field 进行再次校验，使用了 validateFieldsAndScroll。但发现并未生效。
+后来经调试，发现如果对该函数传入一组指定的 field，是可以生效的。但只要这组 fileds 中，
+包含了任意一个在校验规则中指定使用 validator 辅助校验的，则整个 validateFields 方法都不生效。
+最后，才发现，是因为，我一开始并没有在对应的 validator 回调中，
+总是返回 callback() （觉得很多余，而且一开始不写也可以对单个 input 做正常校验）。加上以后就 ok 了。
 
-后来经调试，发现如果对该函数传入一组指定的 field，是可以生效的。但只要这组 fileds 中，包含了任意一个在校验规则中指定使用 validator 辅助校验的，则整个 validateFields 方法都不生效。
-
-最后，才发现，是因为，我一开始并没有在对应的 validator 回调中，总是返回 callback() （觉得很多余，而且一开始不写也可以对单个 input 做正常校验）。加上以后就 ok 了。
-
-
-
+```
 
 ```
 handleConfirmPassword = (rule, value, callback) => {
@@ -56,3 +56,28 @@ handleConfirmPassword = (rule, value, callback) => {
 </FormItem>
 
 ```
+
+#### 正则匹配 `开头不能为0或不超过 9999999` 的数字 
+
+  `/^[1-9]\d{0,6}$/`
+  
+#### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
