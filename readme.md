@@ -105,35 +105,11 @@ handleEditItem(item){
 
 >  Warning: Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
 
-```
-<Table
-  dataSource={this.state.serviceSingleDTOS}
-   rowKey={(record) => {
-       return record.id
-   }}
- >
 
-```
 
-```
-.ant-checkbox-wrapper{
-      .ant-checkbox{
-        .ant-checkbox-inner{
-          display: none;
-        }
-        & + span{
-          background-color: #999999;
-          border-radius: 4px;
-        }
-      }
-      .ant-checkbox-checked + span{
-        background-color: #1890FF;
-        color: white;
-        border-radius: 4px;
-      }
-    }
+#### 阅读需求文档
 
-```
+> 想清楚再做
 
 
 
