@@ -106,14 +106,47 @@ handleEditItem(item){
 >  Warning: Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key.
 
 
+## 2018年8月1日 CRM 商机-客户-订单 结构调整
 
 #### 阅读需求文档
 
-> 想清楚再做
+> 想清楚再做 需求分析能力
+
+#### 数据刷新，分模块刷新
+
+#### componentWillReceiveProps(nextProps)渲染时机问题
+
+* 需要先判断一下是否有变化再刷新
+
+```
+componentWillReceiveProps(nextProps){
+        if(nextProps.currentBoStageType !== this.state.currentBoStageType){
+            this.setState({
+                currentBoStageType: nextProps.currentBoStageType,
+            }, () => {
+                this.getTotalSchema('/schema/potential/bo-detailItem-schema')
+            });
+        }
+    }
 
 
 
+```
+* `shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用`
 
+#### ant-d `Checkbox`组件问题
+
+* 更改 `defaultValue` 属性 不会触发页面重新渲染
+
+```
+约束性和非约束性组件
+
+约束性组件，简单的说，就是由React管理了它的value，而非约束性组件的value就是原生的DOM管理的。 
+
+
+```
+
+* [defaultValue与value的区别 (react.js)](https://blog.csdn.net/function__/article/details/72357251)
 
 
 
