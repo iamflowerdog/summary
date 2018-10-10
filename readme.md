@@ -148,6 +148,26 @@ componentWillReceiveProps(nextProps){
 
 * [defaultValue与value的区别 (react.js)](https://blog.csdn.net/function__/article/details/72357251)
 
+#### React 数据刷新 
+
+* 每次改变key的值，就会刷新页面。
+
+
+## 2018年8月25号 新增商机修改
+
+#### dev 环境
+
+* 张明群的客户 ： 15501210033  啦啦啦
+* 公海客户：跳过三次没有合同 15638521616
+
+#### antd `Modal` 组件初始化数据
+
+* 每次 `showModal` 的时候数据要初始化，不然会
+
+
+
+
+
 
 
 
